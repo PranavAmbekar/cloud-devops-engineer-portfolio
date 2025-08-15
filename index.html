@@ -351,6 +351,8 @@
             padding: 6rem 3rem;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            z-index: 10;
         }
 
         h2 {
@@ -362,6 +364,7 @@
             background: linear-gradient(135deg, var(--champagne-gold), var(--soft-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
             position: relative;
             letter-spacing: 1px;
         }
@@ -380,9 +383,30 @@
         /* Luxury Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 1024px) {
+            .skills-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .skill-card {
